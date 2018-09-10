@@ -1,4 +1,11 @@
 #! /usr/bin/env python3
+# This code avoids the race condition between the 2 threads
+# that was present in the v0
+
+# Solution:  Creating an object of type Lock
+# Idea:  A lock can be requested to acquire the lock
+#        other objects cannot access a variable until
+#        the lock is released
 
 from sys import argv
 from time import time, sleep
